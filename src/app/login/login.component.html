@@ -1,6 +1,18 @@
 <div class="content-container">
     <div class="content-area">
       <h3>Please use the form below to login!</h3>
+      <div class="alert alert-danger" *ngIf="error != ''">
+        <div class="alert-items">
+            <div class="alert-item static">
+                <div class="alert-icon-wrapper">
+                    <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="alert-text">
+                    {{error}}
+                </span>
+            </div>
+        </div>
+      </div>
         <form clrForm [formGroup]="loginForm">
             <clr-input-container>
                 <label>Email Address</label>
@@ -8,12 +20,11 @@
                 <clr-control-helper>Enter your email address</clr-control-helper>
                 <clr-control-error>A valid email address is required</clr-control-error>
             </clr-input-container>
-            <clr-input-container>
+            <clr-password-container>
                 <label>Password</label>
-                <input clrInput type="password" formControlName="password" />
-                <clr-control-helper>Enter your password</clr-control-helper>
+                <input clrPassword placeholder="Enter password" name="password" formControlName="password" />
                 <clr-control-error>Please enter your password</clr-control-error>
-            </clr-input-container>
+            </clr-password-container>
             <button [disabled]="!loginForm.valid" class="btn btn-primary" (click)="signInWithEmail()">Login</button>
         </form>
     </div>

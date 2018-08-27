@@ -11,6 +11,8 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  error = '';
+
   loginForm = new FormGroup({
     emailAddress: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
@@ -21,12 +23,16 @@ export class LoginComponent implements OnInit {
   signInWithEmail() {
     const _email = this.loginForm.value.emailAddress;
     const _pass = this.loginForm.value.password;
+    this.error = '';
     this.authService.signInRegular(_email, _pass)
       .then((res) => {
         console.log(res);
         this.router.navigate(['home']);
       })
-      .catch((err) => console.log('error: ' + err));
+      .catch((err) => {
+        this.error = err;
+        console.log('error: ' + err);
+      });
   }
 
   ngOnInit() {
