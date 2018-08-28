@@ -16,13 +16,15 @@ import { AuthService } from './services/auth.service';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { PlanComponent } from './diet/plan/plan.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    PlanComponent
   ],
   exports: [RouterModule],
   imports: [
