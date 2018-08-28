@@ -34,12 +34,13 @@ export class AuthService {
     return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
-  isLoggedIn() {
-    if (this.userDetails == null ) {
-        return false;
-      } else {
-        return true;
-      }
+    get isLoggedIn(): boolean {
+      return this.userDetails != null ? true : false;
+    }
+
+    // Returns current user UID
+    get currentUserEmail(): string {
+      return this.userDetails != null ? this.userDetails.email : '';
     }
 
 

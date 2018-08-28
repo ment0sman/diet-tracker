@@ -7,13 +7,13 @@ import { routes } from './router/app.router';
 import { AppComponent } from './app.component';
 import { ClarityModule, ClrFormsNextModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { AuthService } from './services/auth.service';
+import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
